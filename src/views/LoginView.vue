@@ -2,7 +2,7 @@
   <div class="overlay dark-text">
     <div class="modal-container">
       <div class="modal-content">
-        <span class="close" @click="closeModal">&times;</span>
+        <span class="close" @click="closeModalAndGoBack">&times;</span>
         <div class="text-center mb-4">
           <h1 class="fs-3">Είσοδος</h1>
         </div>
@@ -40,6 +40,7 @@ import { useRouter } from 'vue-router';
 import { useApplicationStore } from '@/stores/application.js';
 
 const router = useRouter();
+const showModal = ref(true);
 const {loadUserData, setUserData, persistUserData, isAuthenticated } = useApplicationStore();
 
 const loading = ref(false);
@@ -89,9 +90,19 @@ onBeforeMount(() => {
 
 const closeModal = () => {
   showModal.value = false;
+};
+
+const goBack = () => {
+  if (window.confirm("Είστε σίγουρος ότι θέλετε να επιστρέψετε;")) {
+    window.history.back();
+  }
+};
+
+const closeModalAndGoBack = () => {
+  closeModal();
   setTimeout(() => {
-    location.reload();
-  }, 500);
+    goBack();
+  }, 300);
 };
 </script>
 

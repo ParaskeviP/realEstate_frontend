@@ -2,7 +2,7 @@
   <div class="overlay white-text" ref="overlay" @click.self="closeModal">
     <div class="modal-container">
       <div class="modal-content">
-        <span class="close" @click="closeModal">&times;</span>
+        <span class="close" @click="closeModalAndGoBack">&times;</span>
         <div class="text-center mb-4">
           <h3 class="display-4 text-dark font-bold">Εγγραφείτε</h3>
         </div>
@@ -35,7 +35,7 @@
           
           <div class="form-group">
             <label for="userRoleFormControl" class="form-label text-dark">Ρόλος</label>
-            <select v-model="user.role" class="form-control rounded-3" id="userRoleFormControl">
+            <select v-model="user.role" class="form-control rounded-3" id="userRoleFormControl" @change="togglerOwnerFields">
               <option value="ROLE_TENANT">Tenant</option>
               <option value="ROLE_OWNER">Owner</option>
             </select>
@@ -72,6 +72,7 @@ const user = ref({
 });
 
 const msg = ref('');
+const showModal = ref(true);
 const router = useRouter();
 
 const onFormSubmit = () => {
@@ -126,9 +127,19 @@ const openModal = (message) => {
 
 const closeModal = () => {
   showModal.value = false;
+};
+
+const goBack = () => {
+  if (window.confirm("Είστε σίγουρος ότι θέλετε να επιστρέψετε;")) {
+    window.history.back();
+  }
+};
+
+const closeModalAndGoBack = () => {
+  closeModal();
   setTimeout(() => {
-    location.reload();
-  }, 500);
+    goBack();
+  }, 300);
 };
 </script>
 
@@ -156,6 +167,13 @@ const closeModal = () => {
   max-width: 500px;
   width: 100%;
   text-align: center;
+}
+
+/* ScrollBar */
+.modal-content {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 1rem;
 }
 
 /* Heading and Text */
