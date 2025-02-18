@@ -13,14 +13,23 @@
       <li v-if="hasRole('OWNER')">
         <a href="/getRequests" class="nav-link btn">Προβολή Αιτήσεων</a>
       </li>
-      <li v-if="hasRole('TENANT')">
-        <a href="/showProperties" class="nav-link btn">Προβολή Ακινήτων</a>
+      <li v-if="hasRole('OWNER')">
+        <a href="/oprofile" class="nav-link btn">👨🏻‍💼</a>
       </li>
       <li v-if="hasRole('TENANT')">
-        <a href="/searchProperties" class="nav-link btn">Αναζήτηση Ακινήτων</a>
+        <a href="/search" class="nav-link btn">Αναζήτηση Ακινήτων</a>
+      </li>
+      <li v-if="hasRole('TENANT')">
+        <a href="/notifications" class="nav-link btn">📧</a>
+      </li>
+      <li v-if="hasRole('TENANT')">
+        <a href="/profile" class="nav-link btn">👤</a>
       </li>
       <li v-if="hasRole('ADMIN')">
-        <a href="/users" class="nav-link btn">Users</a>
+        <a href="/users" class="nav-link btn">Χρήστες</a>
+      </li>
+      <li v-if="hasRole('ADMIN')">
+        <a href="/applicationManagement" class="nav-link btn">Ακίνητα & Αιτήσεις</a>
       </li>
       <li v-if="isAuthenticated">
         <a href="#" @click.prevent="handleLogout" class="nav-link btn logout-btn">Έξοδος</a>

@@ -17,8 +17,8 @@
           <th>Έχει Μπαλκόνια</th>
           <th>Έχει Κεντρική Θέρμανση</th>
           <th>Είναι Επιπλωμένο</th>
-          <th>Έτος Ανακαίνησης</th>
           <th>Έτος Κατασκευής</th>
+          <th>Έτος Ανακαίνησης</th>
           <th>Επιλογές</th>
         </tr>
         </thead>
@@ -165,11 +165,11 @@ const makeRentalRequest = (propertyId) => {
   })
       .then((response) => {
         if (response.ok) {
-          openModal('Request successfully sumbitted!');
+          openModal('Η αίτηση υπεβλήθη επιτυχώς!');
           fetchProperties();
         } else {
           response.json().then(data => {
-            openModal(`Failed to submit the request: ${data.message || 'Unknown error'}`);
+            openModal(`Αποτυχία υποβολής: ${data.message || 'Unknown error'}`);
           });
         }
       })
@@ -188,11 +188,11 @@ const makeViewingRequest = (propertyId) => {
   })
       .then((response) => {
         if (response.ok) {
-          openModal('Request successfully sumbitted!');
+          openModal('Η αίτηση υπεβλήθη επιτυχώς!');
           fetchProperties();
         } else {
           response.json().then(data => {
-            openModal(`Failed to submit the request: ${data.message || 'Unknown error'}`);
+            openModal(`Αποτυχία υποβολής: ${data.message || 'Unknown error'}`);
           });
         }
       })
@@ -201,7 +201,6 @@ const makeViewingRequest = (propertyId) => {
       });
 };
 </script>
-
 
 <style>
 .pos {

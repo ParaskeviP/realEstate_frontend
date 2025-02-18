@@ -4,7 +4,6 @@ import { RouterView } from 'vue-router';
 import { useApplicationStore } from '@/stores/application.js';
 import AppHeader from '@/components/AppHeader.vue';
 import AppFooter from '@/components/AppFooter.vue';
-import PropertiesListView from './views/PropertiesListView.vue';
 
 const { loadUserData } = useApplicationStore();
 
@@ -30,7 +29,6 @@ html, body {
   background: none;
   color: #333;
 }
-
 
 .content {
   flex: 1;

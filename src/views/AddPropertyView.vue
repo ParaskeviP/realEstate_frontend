@@ -381,6 +381,14 @@ body, html {
   color: #fff;
 }
 
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  color: #373b55;
+  text-shadow: 2px 2px 6px rgba(55, 59, 85, 0.5), -2px -2px 6px rgba(255, 255, 255, 0.2);
+  margin: 20px 0;
+}
+
 @media (max-width: 768px) {
   .form-container {
     width: 100%;
@@ -397,5 +405,4 @@ body, html {
     font-size: 14px;
   }
 }
-
 </style>
