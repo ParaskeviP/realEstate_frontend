@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "testTenant",
+      "password": "123456",
+      "role": "ROLE_TENANT"
+    },
+    {
+      "id": "3",
+      "username": "testOwner",
+      "password": "123456",
+      "role": "ROLE_OWNER"
+    },
+    {
+      "id": "d3eb",
+      "username": "admin",
+      "password": "1234"
+    },
+    {
+      "id": "a403",
+      "username": "admin",
+      "password": "1234"
+    }
+  ]
+}
