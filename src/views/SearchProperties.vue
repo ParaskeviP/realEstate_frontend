@@ -6,7 +6,6 @@
       <div>
         <label for="searchType">Εφαρμογή Φίλτρου</label>
         <select v-model="searchType" id="searchType" required>
-          <option value="getById">ID</option>
           <option value="getByRoomNumber">Αριθμός Δωματίων</option>
           <option value="getByBedNumber">Αριθμός Υπνοδωματίων</option>
           <option value="getByBathNumber">Αριθμός WC</option>
@@ -51,7 +50,6 @@
           <table>
             <thead>
             <tr>
-              <th>ID</th>
               <th>Πόλη</th>
               <th>Οδός</th>
               <th>Νούμερο</th>
@@ -73,7 +71,6 @@
             </thead>
             <tbody>
             <tr v-for="property in paginatedProperties" :key="property.id">
-              <td>{{ property.id }}</td>
               <td>{{ property.city }}</td>
               <td>{{ property.street }}</td>
               <td>{{ property.streetNum }}</td>
