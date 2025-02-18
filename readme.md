@@ -8,9 +8,10 @@ The github repository for the Distributed Systems Proj http://localhost:3000ect 
 - [License](#license)
 
 ## Installation
-1. Clone the repository: ```git clone https://github.com/k-vasileiou10/RealEstateManagementPlatform.git```
-2. Move to the correct directory: ```cd /path/to/where/downloaded/rentalmanagementbackend```
-3. Run: ```mvn clean install```
+1. Clone the repository with the frontend: ```https://github.com/ParaskeviP/realEstate_frontend.git```
+2. Move to the correct directory: ```cd /path/to/where/downloaded/rentalmanagementfrontend```
+3. 
+4. Run: ```mvn clean install```
 
 ## Usage
 Once done: ```npm run dev``` to run the site on port 8080
